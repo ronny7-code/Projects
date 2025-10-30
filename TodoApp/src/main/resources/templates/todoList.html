@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>TODO Lists</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="mainBody">
+
+<h1 class="headers">Here's your TODO List</h1>
+
+<div th:if="${successMsg}">
+	<h3 th:text="${successMsg}" style="color: green;"></h3>
+</div>
+
+<div th:if="${errorMsg}">
+	<h3 th:text="${errorMsg}" style="color: red;"></h3>
+</div>
+
+<form th:action="@{/addTodo}" th:object="${newTask}" method="POST">
+	Add New Task : &nbsp; <input type="text" th:field="*{taskTitle}"
+								 placeholder="Enter new task"> &nbsp; <input type="submit"
+																			 value="Add">
+</form>
+<br><br>
+
+<table>
+	<thead>
+	<tr>
+		<td>S.N</td>
+		<td>Task Title</td>
+	</tr>
+	</thead>
+	<tbody>
+
+	<tr th:each="task : ${tasks}">
+		<td th:text="${task.id}"></td>
+		<td th:text="${task.taskTitle}"></td>
+		<td>
+			<form th:action="@{'/completeTodo/' + ${task.id}}" method="post" style="display:inline;">
+				<button type="submit" style="background-color: green; color: white; border: none; padding: 6px 10px; border-radius: 5px; cursor: pointer;">
+					Mark as Done
+				</button>
+			</form>
+
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<br><br>
+<a href="index.html">Home</a>
+</body>
+</html>

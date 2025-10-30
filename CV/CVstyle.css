@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+}
+#profileImage{
+    float: left;
+    margin: 0px 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+#CVstyle{
+    color: white;
+    text-align:center;
+    font-family: Segoe print;
+
+}
+
+.headings{
+    text-decoration: underline;
+    color: lightgreen;
+    margin: 5px 100px;
+}
+
+#objective{
+    color: red;
+    margin: 5px 100px;
+    font-size: 17px;
+}
+
+#personalInfo{
+    color: yellow;
+    margin: 5px 100px;
+    font-size: 17px;
+}
+#education{
+    color: aqua;
+    margin: 5px 100px;
+    font-size: 17px;
+}
+table, tr, th, td{
+    border-style:solid;
+    border-collapse: collapse;
+    text-align: center;
+    border-width: 1px;
+    border-color: white;
+}
+#internship{
+    color:white;
+    margin: 5px 100px;
+    font-size: 17px;
+}
+#skills{
+    color:white;
+    margin: 5px 100px;
+    font-size: 17px;
+}
